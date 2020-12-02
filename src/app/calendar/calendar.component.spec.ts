@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { CalendarComponent } from './calendar.component';
+import { Component } from '@angular/core';
 
 describe('CalendarComponent', () => {
   let component: CalendarComponent;
@@ -23,3 +23,6 @@ describe('CalendarComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+
+
+export class DatepickerTouchExample {}
