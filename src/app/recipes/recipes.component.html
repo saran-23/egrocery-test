@@ -1,0 +1,26 @@
+<!-- <app-recipe-item [myRecipe]="testRecipe"></app-recipe-item> -->
+<div class="jumbotron bg-keylime">
+  <h1>My Recipes</h1>
+</div>
+
+<a routerLink="/recipe-add">
+  <button type="button" class="btn btn-secondary btn-lg mrgn-bottom">
+    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add Recipe 
+  </button>
+</a>
+
+<div class="row">
+  <div class="col-md-5">
+    <ul class="nav nav-pills nav-stacked">
+      <li role="presentation" (click) = "onMealSelect(0)" [ngClass]="{'active':mealSelected.name === 'Breakfast'}"><a>Breakfast</a></li>
+      <li role="presentation" (click) = "onMealSelect(1)" [ngClass]="{'active':mealSelected.name === 'Lunch'}"><a>Lunch</a></li>
+      <li role="presentation" (click) = "onMealSelect(2)" [ngClass]="{'active':mealSelected.name === 'Dinner'}"><a>Dinner</a></li>
+      <li role="presentation" (click) = "onMealSelect(3)" [ngClass]="{'active':mealSelected.name === 'Dessert'}"><a>Dessert</a></li>
+    </ul>
+  </div>
+  <div class="col-md-7">
+    <ul class="list-group">
+      <li *ngFor="let recipe of mealSelected.recipes" (click)="recipeSelected(recipe)" class="list-group-item">{{ recipe.name }}</li>
+    </ul>
+  </div>
+</div>
